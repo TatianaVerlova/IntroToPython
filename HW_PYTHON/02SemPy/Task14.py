@@ -23,11 +23,11 @@
 num = input("Введите число: ")
 list = []
 for i in range(len(num)):
-    if num[i] != ".":
+    if num[i] != "." or num[i] != "-":
         list.append(int(num[i]))
 sum = 0
 for j in range(len(list)):
     sum += list[j]
 print(sum)
 
-# Подскажите, как решить рпоблему с погрешностью?
+# Подскажите, как решить проблему с погрешностью?
