@@ -12,4 +12,3 @@ def sort(lst):
     s = list(uniq_elements)
     s.sort()
     return s
-

@@ -1,5 +1,3 @@
-"(1+2)*3"
-
 def parse(s):
     result = []
     digit = ''
@@ -43,8 +41,12 @@ def calc(lst):
 
 def brackets(lst):
     while '(' in lst:
-        index = lst.index('-')
-        result = lst[index - 1] - lst[index + 1]
-        lst = lst[:index - 1] + [result] + lst[index + 2:]
+        opening = lst.index('(')
+        closing = lst.index(')')
+        lst = lst[:opening] + [calc(lst[opening + 1:closing])] + lst[closing + 1:]
+    return lst
 
-print(parse("(1+2)*3"))
+s = "(1+2)*3"
+result = parse(s)
+result = brackets(result)
+print(calc(result))
