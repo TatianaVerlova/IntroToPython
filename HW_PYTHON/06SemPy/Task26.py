@@ -18,7 +18,8 @@ def Fibonacci(num):
         else:
             return Fibonacci(num - 1) + Fibonacci (num - 2)
 number = int(input('Введите число: '))
-lst = []
-for i in range(-number, number + 1):
-    lst.append(Fibonacci(i))
-print(lst)
+# list = []
+# for i in range(-number, number + 1):
+#     list.append(Fibonacci(i))
+data = [Fibonacci(i) for i in range(-number, number + 1)] # применен LC
+print(data)

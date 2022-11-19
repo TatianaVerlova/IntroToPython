@@ -2,8 +2,8 @@
 # Пример:
 # при d = 0.001, π = 3.141 10^(-1) ≤ d ≤ 10^(-10)
 
-import math
-str_pi = str(math.pi)
+from math import pi
+str_pi = str(pi)
 d = float(input('Введите d: '))
 digit = 0
 while d < 1:

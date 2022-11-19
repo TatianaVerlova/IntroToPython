@@ -62,7 +62,7 @@
 
 from random import randint
 
-class Wrong_amount(Exception):
+class WrongAmount(Exception):
     def __init__(self, txt):
         self.txt = txt
 
@@ -78,8 +78,8 @@ while candies_amount >= 1:
         extraction = int(input(f"Осталось {candies_amount} конфет. Какое количество конфет вы возьмете? "))
         try:
             if 0 < extraction > permitted_extraction:
-                raise Wrong_amount("Вы не можете взять такое количество конфет! Игра окончена")
-        except Wrong_amount as err:
+                raise WrongAmount("Вы не можете взять такое количество конфет! Игра окончена")
+        except WrongAmount as err:
             print(err)
         else: 
             candies_amount -= extraction

@@ -4,10 +4,11 @@
 # o [2, 3, 5, 6] => [12, 15]
 
 def SumOfPairs(lst):
-    result = []
-    for i in range(len(lst)//2):
-        item = lst[i]*lst[(i + 1)*(-1)]
-        result.append(item)
+    # result = []
+    # for i in range(len(lst)//2):
+    #     item = lst[i]*lst[(i + 1)*(-1)]
+    #     result.append(item)
+    result = [lst[i]*lst[(i + 1)*(-1)] for i in range(len(lst)//2)] # применен LC
     if len(lst) % 2:
         item = lst[len(lst)//2] ** 2
         result.append(item)

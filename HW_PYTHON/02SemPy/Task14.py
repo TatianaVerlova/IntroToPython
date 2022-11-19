@@ -11,23 +11,23 @@
 # while num % 1 != 0:
 #     num *= 10
 # num = round(num, None)
-# sum = 0
+# my_sum = 0
 # while num // 10 != 0:
-#     sum += num % 10
+#     my_sum += num % 10
 #     num //= 10
-# sum += num
-# print(sum)
+# my_sum += num
+# print(my_sum)
 
 # Поэтому второе решение с перобразованием в строку:
 
 num = input("Введите число: ")
-list = []
+lst = []
 for i in range(len(num)):
     if num[i] != "." or num[i] != "-":
-        list.append(int(num[i]))
-sum = 0
-for j in range(len(list)):
-    sum += list[j]
-print(sum)
+        lst.append(int(num[i]))
+my_sum = 0
+for j in range(len(lst)):
+    my_sum += lst[j]
+print(my_sum)
 
 # Подскажите, как решить проблему с погрешностью?
