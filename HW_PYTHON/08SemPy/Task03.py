@@ -31,6 +31,8 @@
 Тогда метод make_order() вернет строку: *****\n*****\n*****.
 Подсказка: подробный список операторов для перегрузки доступен по ссылке.
 """
+
+
 class Cell:
     quantity = None
 
@@ -50,16 +52,23 @@ class Cell:
             new = Cell(quantity)
             return new.quantity
 
-
     def __mul__(self, other):
-        new = Cell()
         quantity = self.quantity * other.quantity
         new = Cell(quantity)
         return new.quantity
 
-    def __truediv__(elf, other):
-        pass
+    def __truediv__(self, other):
+        quantity = self.quantity // other.quantity
+        new = Cell(quantity)
+        return new.quantity
 
+    def make_order(self, number):
+        repetition = self.quantity // number
+        for i in range(repetition):
+            print('*' * number + "\n")
+        if self.quantity % number != 0:
+            count = self.quantity - repetition * number
+            print('*' * count)
 
 
 print("Создаем объекты клеток")
@@ -78,5 +87,9 @@ print()
 print("Умножаем")
 print(cell2 * cell1)
 print()
-# print("Делим")
-# print(cell1 / cell2)
+print("Делим")
+print(cell1 / cell2)
+print()
+print("Организация ячеек по рядам")
+print(cell1.make_order(5))
+print(cell2.make_order(10))
