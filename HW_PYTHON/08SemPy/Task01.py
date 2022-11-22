@@ -30,16 +30,21 @@ class Matrix:
         self.lst = lst
 
     def __str__(self):
+        string = ''
         for el in self.lst:
             for item in el:
-                print(str(item) + ' ')
-        print('\n')
+                string += str(item) + ' '
+            string += '\n'
+        return string
 
     def __add__(self, other):
         matrix_sum = []
-        for i in range(len(self.lst)):
-            for j in range(self.lst[i]):
-                matrix_sum[j] = self.lst[j] + other.lst[j]
+        for i in range(0, len(self.lst)):
+            matrix_element = []
+            for j in range(0, len(self.lst[i])):
+                value = self.lst[i][j] + other.lst[i][j]
+                matrix_element.append(value)
+            matrix_sum.append(matrix_element)
         return matrix_sum
 
 matrix1 = Matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
