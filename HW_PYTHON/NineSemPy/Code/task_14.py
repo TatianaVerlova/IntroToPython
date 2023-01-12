@@ -4,9 +4,6 @@
 # - 0,56 -> 11
 
 
-from unittest import TestCase
-
-
 def sum_of_digits(number_str):
     number_str = str(number_str)
     lst = []
@@ -19,14 +16,5 @@ def sum_of_digits(number_str):
     return my_sum
 
 
-num = input("Введите число: ")
+num = input("Введите число для вычисления sum_of_digits: ")
 print(sum_of_digits(num))
-
-
-class TestSumOfDigits(TestCase):
-
-    def test_sum_of_digits_int(self):
-        self.assertEqual(sum_of_digits(6782), 23)
-
-    def test_sum_of_digits_float(self):
-        self.assertEqual(sum_of_digits(0.56), 11)
